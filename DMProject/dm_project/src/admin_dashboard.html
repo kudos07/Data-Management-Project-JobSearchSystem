@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Admin Dashboard</h1>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            Query 1: Retrieve Job Descriptions and Salaries for Jobs Posted by Employers
+        </div>
+        <div class="card-body">
+            <form id="query1Form">
+                <div class="form-group">
+                    <label for="query1Location">Location:</label>
+                    <select class="form-control" id="query1Location">
+                        <option value="New York">New York</option>
+                        <option value="Dubai">Dubai</option>
+                        <option value="Paris">Paris</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="query1EnterpriseName">Enterprise Name Starts With:</label>
+                    <select class="form-control" id="query1EnterpriseName">
+                        <option value="Global%">Global%</option>
+                        <option value="Tech%">Tech%</option>
+                        <option value="Health%">Health%</option>
+                    </select>
+                </div>
+                <button type="button" onclick="executeQuery(1)" class="btn btn-primary">Run Query 1</button>
+            </form>
+            <div id="result1" class="query-result mt-3"></div>
+        </div>
+    </div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Query 2: Which candidates have qualifications in 'Computer Science' and skills in both 'Java Programming' and 'Database Management'?
+    </div>
+    <div class="card-body">
+        <form id="query2Form">
+            <div class="form-group">
+                <label for="query2Qualification">Qualification:</label>
+                <select class="form-control" id="query2Qualification">
+                    <option value="Computer Science">Computer Science</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="query2Skill1">Skill 1:</label>
+                <select class="form-control" id="query2Skill1">
+                    <option value="Java Programming">Java Programming</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="query2Skill2">Skill 2:</label>
+                <select class="form-control" id="query2Skill2">
+                    <option value="Database Management">Database Management</option>
+                </select>
+            </div>
+            <button type="button" onclick="executeQuery(2)" class="btn btn-primary">Run Query 2</button>
+        </form>
+        <div id="result2" class="query-result mt-3"></div>
+    </div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        Query 3: List all employers who have offered jobs with a salary higher than a certain amount but do not have employees who joined after a specific year.
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="query3Salary">Minimum Salary:</label>
+            <input type="number" id="query3Salary" class="form-control" value="75000">
+        </div>
+        <div class="form-group">
+            <label for="query3Year">Employees Joined Before Year:</label>
+            <input type="number" id="query3Year" class="form-control" value="2025">
+        </div>
+        <button type="button" onclick="executeQuery(3)" class="btn btn-primary">Run Query 3</button>
+        <div id="result3" class="query-result mt-3"></div>
+    </div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        Query 4: List the top 5 employers by the number of different job positions they have offered.
+    </div>
+    <div class="card-body">
+        <button type="button" onclick="executeQuery(4)" class="btn btn-primary">Run Query 4</button>
+        <div id="result4" class="query-result mt-3"></div>
+    </div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        Query 5: List the top 3 most common skills among candidates with a specific qualification.
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="query5Qualification">Qualification:</label>
+            <select class="form-control" id="query5Qualification">
+                <option value="Master in Business Administration">Master in Business Administration</option>
+            </select>
+        </div>
+        <button type="button" onclick="executeQuery(5)" class="btn btn-primary">Run Query 5</button>
+        <div id="result5" class="query-result mt-3"></div>
+    </div>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        Query 6: Find candidates with skills matching the requirements for a specific job.
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="query6JobDescription">Job Description:</label>
+            <input type="text" class="form-control" id="query6JobDescription" placeholder="Enter Job Description (e.g., Software Engineer)">
+        </div>
+        <button type="button" onclick="executeQuery(6)" class="btn btn-primary">Run Query 6</button>
+        <div id="result6" class="query-result mt-3"></div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Query 7: How many candidates with a Master's degree have a specific skill?
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="query7SkillName">Skill Name:</label>
+            <select class="form-control" id="query7SkillName">
+                <option value="Web Development">Web Development</option>
+            </select>
+        </div>
+        <button type="button" onclick="executeQuery(7)" class="btn btn-primary">Run Query 7</button>
+        <div id="result7" class="query-result mt-3"></div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Query 8: Identify candidates who have skills that no other candidate has.
+    </div>
+    <div class="card-body">
+        <button type="button" onclick="executeQuery(8)" class="btn btn-primary">Run Query 8</button>
+        <div id="result8" class="query-result mt-3"></div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Query 9: Determine the top 5 skills in demand for jobs that have no current candidates.
+    </div>
+    <div class="card-body">
+        <button type="button" onclick="executeQuery(9)" class="btn btn-primary">Run Query 9</button>
+        <div id="result9" class="query-result mt-3"></div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Query 10: Identify employers with no employees who have a specific skill.
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="query10SkillName">Skill Name:</label>
+            <select class="form-control" id="query10SkillName">
+                <option value="Data Analysis">Data Analysis</option>
+            </select>
+        </div>
+        <button type="button" onclick="executeQuery(10)" class="btn btn-primary">Run Query 10</button>
+        <div id="result10" class="query-result mt-3"></div>
+    </div>
+</div>
+
+    
+</div>
+
+<script src="admin_queries.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

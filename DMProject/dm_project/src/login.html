@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Screen</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="login-section" id="employee-login" style="background-image: url('images/img1carousel.jpg');">
+    <div class="login-box">
+        <h2>ADMIN / EMPLOYEE LOGIN</h2>
+        <input type="text" placeholder="Username" id="employee-username" onkeypress="handleKeyPress(event, 'employee')">
+        <input type="password" placeholder="Password" id="employee-password" onkeypress="handleKeyPress(event, 'employee')">
+        <button onclick="login('employee')">Login</button>
+        <p id="employee-message"></p>
+    </div>
+</div>
+
+<div class="login-section" id="candidate-login" style="background-image: url('images/img2carousel.jpg');">
+    <div class="login-box">
+        <h2>CANDIDATE LOGIN</h2>
+        <input type="text" placeholder="Username" id="candidate-username" onkeypress="handleKeyPress(event, 'candidate')">
+        <input type="password" placeholder="Password" id="candidate-password" onkeypress="handleKeyPress(event, 'candidate')">
+        <button onclick="login('candidate')">Login</button>
+        <p id="candidate-message"></p>
+    </div>
+</div>
+
+<div class="login-section" id="employer-login" style="background-image: url('images/img3carousel.jpg');">
+    <div class="login-box">
+        <h2>EMPLOYER LOGIN</h2>
+        <input type="text" placeholder="Username" id="employer-username" onkeypress="handleKeyPress(event, 'employer')">
+        <input type="password" placeholder="Password" id="employer-password" onkeypress="handleKeyPress(event, 'employer')">
+        <button onclick="login('employer')">Login</button>
+        <p id="employer-message"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

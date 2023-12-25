@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Screen</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-box" id="employee-login">
+        <h2>Employee Login</h2>
+        <input type="text" placeholder="Username" id="employee-username">
+        <input type="password" placeholder="Password" id="employee-password">
+        <button onclick="login('employee')">Login</button>
+    </div>
+
+    <div class="login-box" id="candidate-login">
+        <h2>Candidate Login</h2>
+        <input type="text" placeholder="Username" id="candidate-username">
+        <input type="password" placeholder="Password" id="candidate-password">
+        <button onclick="login('candidate')">Login</button>
+    </div>
+
+    <div class="login-box" id="employer-login">
+        <h2>Employer Login</h2>
+        <input type="text" placeholder="Username" id="employer-username">
+        <input type="password" placeholder="Password" id="employer-password">
+        <button onclick="login('employer')">Login</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
